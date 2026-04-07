@@ -1,0 +1,108 @@
+.heroSection {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.canvasContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; /* Let clicks pass through to underneath overlay if needed */
+}
+
+/* We want canvas to rotate/interact but not block buttons, 
+   except currently it spans whole screen. 
+   We will keep pointer events on if we want user interaction with 3D,
+   but we'll ensure overlay is higher z-index. */
+.heroSection > .canvasContainer {
+  pointer-events: auto;
+}
+
+.overlayContainer {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  pointer-events: none; /* Allows canvas interaction where text is not present */
+}
+
+.content {
+  max-width: 600px;
+  pointer-events: auto; /* Re-enable clicks for text/buttons */
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.primaryButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+}
+
+.secondaryButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--glass-bg);
+  color: var(--color-text);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}

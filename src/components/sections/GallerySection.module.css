@@ -1,0 +1,52 @@
+/* src/components/sections/GallerySection.module.css */
+.sectionHeight {
+  /* Give enough height to capture scroll for a prolonged period */
+  height: 400vh;
+  position: relative;
+  background-color: var(--color-bg);
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at center, hsla(273, 67%, 20%, 0.1) 0%, var(--color-bg) 60%);
+}
+
+.canvasWrapper {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.overlayHeader {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+  /* Let clicks pass to canvas if needed */
+}
+
+.heading {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, var(--color-text), var(--color-accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtext {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
