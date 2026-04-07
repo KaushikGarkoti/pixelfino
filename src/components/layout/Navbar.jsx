@@ -15,16 +15,16 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <a href="#" className={styles.logo}>
-          <img 
-            src="/logo.jpg" 
-            alt="Pixelfino Logo" 
-            style={{ 
-              height: '80px', 
-              width: '80px', 
-              borderRadius: '50%', 
-              objectFit: 'cover', 
-              objectPosition: 'center' 
-            }} 
+          <img
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt="Pixelfino Logo"
+            style={{
+              height: '80px',
+              width: '80px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
           />
         </a>
         <nav className={styles.nav}>
